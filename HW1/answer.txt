@@ -1,0 +1,34 @@
+Q1: 請描述自己安裝與執行ARM software development tool的過程 ? 
+A : 
+    安裝流程 : 
+    在修這門課程前，已有在Vmware安裝ubuntu。
+    因此，我已經有了Linux的作業系統環境。有了linux的環境後，
+    我下載了老師已經編譯好的arm-cross-toolchain。
+    然後用 tar -zxvf 這個指令把壓縮檔解壓縮。
+    執行流程 : 
+    接著用 cd 這個指令 進到bin資料夾內，
+    開始對 sample.c 和 hw1.s 進行組譯與編譯。
+    分別使用到了./arm-none-eabi-gcc 和 ./arm-none-eabi-as 
+    將上述兩個檔案變成hw1.exe和sample.s
+    完成了執行ARM software development tool 的過程。
+
+Q2:請說明hw1.o與hw1.exe的差別? 可能是什麼原因造成的 ?
+A :hw1.exe是可以執行的執行檔，但是hw1.o是不可執行的object file。
+   hw1.exe可執行，檔案大小比hw1.o來得大。
+   而object file則是還要經過Linker處理後變成.exe才可以執行，因此檔案大小比較小。
+
+Q3:sample_O0.o與sample_O3.o檔案大小的差別? 可能是什麼原因造成的?
+A :sample_O0.o的檔案大小是 1016kb ，而sample_O3.o的檔案大小是 1020kb，
+   sample_O0.o的較小，sample_O3.o較大。
+   其原因與編譯時用到的參數 -O有關。
+
+   在編譯時有一些參數的選項，這些選項和執行效能優化有關。
+   依上面的例子來說，
+   使用的的參數為O0，不做任何的優化。
+   若是使用的參數為O3，能提高程式的執行速度。然而，增加檔案的大小就會比沒優化的檔案來得大。
+   因此，sample_O3.o 的檔案比 sample_O0.o 的檔案大了些，但是執行效率也會比較高。
+
+
+
+
+    
